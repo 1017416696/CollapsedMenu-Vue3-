@@ -6,7 +6,8 @@ import {ref} from "vue";
 //数据必须是响应式的
 const isCollapse = ref(false)
 
-const handleCollapse = () => {
+const handleCollapse = (flag) => {
+  console.log(flag)
   return isCollapse.value = !isCollapse.value
 }
 
@@ -15,7 +16,7 @@ const handleCollapse = () => {
 <template>
   <div class="body-container">
     <Menu :isCollapse="isCollapse"/>
-    <Content @handleCollapse="handleCollapse" :isCollapse="isCollapse"/>
+    <Content @handleCollapse="handleCollapse"/>
   </div>
 </template>
 

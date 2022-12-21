@@ -14,28 +14,44 @@
 
 <script>
 export default {
-  name: "Content"
-}
-</script>
+  name: "Content",
+  props:{
+    isCollapse:{
+      type: Boolean,
+      default:false
+    }
+  },
+  emits:['handleCollapse'],
+  setup(props,context){
+    const handleCollapse = function (){
+      context.emit('handleCollapse',props.isCollapse)
+    }
 
-<script setup>
-
-defineProps({
-  isCollapse:{
-    type: Boolean,
-    default:false
+    return{
+      handleCollapse
+    }
   }
-})
-
-//声明事件
-const emit = defineEmits(['handleCollapse'])
-
-//触发事件
-const handleCollapse = () =>{
-  emit('handleCollapse')
 }
-
 </script>
+
+<!--<script setup>-->
+<!--//-->
+<!--//defineProps({-->
+<!--//  isCollapse:{-->
+<!--//    type: Boolean,-->
+<!--//    default:false-->
+<!--//  }-->
+<!--//})-->
+
+<!--////声明事件-->
+<!--//const emit = defineEmits(['handleCollapse'])-->
+<!--//-->
+<!--////触发事件-->
+<!--//const handleCollapse = () =>{-->
+<!--//  emit('handleCollapse')-->
+<!--//}-->
+
+<!--</script>-->
 
 
 <style scoped>
