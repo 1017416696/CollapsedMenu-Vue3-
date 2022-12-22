@@ -16,7 +16,7 @@ const handleCollapse = (flag) => {
 <template>
   <div class="body-container">
     <Menu :isCollapse="isCollapse"/>
-    <Content @handleCollapse="handleCollapse"/>
+    <Content @handleCollapse="handleCollapse" :is-collapse="isCollapse"/>
   </div>
 </template>
 

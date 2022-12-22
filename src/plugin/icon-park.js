@@ -2,14 +2,16 @@ import { install } from '@icon-park/vue-next/es/all';
 import {
     Home,
     MenuUnfoldOne,
-    MenuFoldOne
+    MenuFoldOne,
+    Translate
 } from '@icon-park/vue-next';
 import '@icon-park/vue-next/styles/index.css';
 
 export const components = [
     Home,
     MenuUnfoldOne,
-    MenuFoldOne
+    MenuFoldOne,
+    Translate
 ];
 
 export default (app) =>{
